@@ -1,0 +1,38 @@
+library(ggplot2)
+library(ISLR)
+data(energy_efficiency_data)
+names(energy_efficiency_data)
+
+ggplot(energy_efficiency_data, aes(x = Relative_Compactness, 
+                                   y = Cooling_Load,
+                                   shape = Overall_Height,
+                                   color = Glazing_Area)) +
+  geom_point()
+
+library(ggplot2)
+library(ISLR)
+data(energy_efficiency_data)
+names(energy_efficiency_data)
+
+ggplot(energy_efficiency_data, aes(x = Relative_Compactness, 
+                                   y = Heating_Load,
+                                   shape = Overall_Height,
+                                   color = Glazing_Area)) +
+  geom_point()
+
+library(ggplot2)
+library(ISLR)
+data(energy_efficiency_data)
+names(energy_efficiency_data)
+
+ggplot(energy_efficiency_data, aes(x = Relative_Compactness, 
+                                   y = Surface_Area,
+                                   color = Orientation)) +
+  geom_point() +
+  geom_smooth(method = 'lm', se = FALSE, linetype = "solid") +
+  theme(
+    legend.position = ("top"),
+    legend.text = element_text(size = 15),
+    legend.title = element_text(size = 16, face = 'bold'),
+    legend.background = element_rect(fill = "white", color = 'black', linetype="dashed"),
+  )
